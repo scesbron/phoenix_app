@@ -1,0 +1,30 @@
+//Grid controler
+$base-font-size: 16px;
+$bigger-font-size: 18px;
+
+// Colors
+$base-color: #333;
+
+//Spacing
+$none-spacing: 0;
+$small-spacing: 10;
+$base-spacing: 20;
+$medium-spacing: 40;
+$xl-spacing: 60;
+$xxl-spacing: 80;
+
+//Margins
+$small-margin: $small-spacing + px;
+$base-margin: $base-spacing + px;
+$medium-margin: $medium-spacing + px;
+$xl-margin: $xl-spacing + px;
+$xxl-margin: $xxl-spacing + px;
+
+$base-title-margin: $base-margin 0;
+
+//Padding
+$small-padding: $small-spacing + px;
+$base-padding: $base-spacing + px;
+$medium-padding: $medium-spacing + px;
+$xl-padding: $xl-spacing + px;
+$xxl-padding: $xxl-spacing + px;

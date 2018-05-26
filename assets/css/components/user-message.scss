@@ -1,0 +1,12 @@
+user-message {
+  border: 1px solid $base-color;
+  padding: $base-padding;
+}
+user-message-title {
+  font-weight: bold;
+  font-size: $bigger-font-size;
+  margin-bottom: $small-margin;
+}
+user-message-text {
+  text-align: justify;
+}

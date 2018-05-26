@@ -4,7 +4,7 @@ FROM elixir:1.6.5
 # install hex package manager
 RUN mix local.hex --force
 
-# install the latest phoenix 
+# install the latest phoenix
 RUN mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez --force
 
 # install node
@@ -21,4 +21,4 @@ COPY . /app
 RUN mix deps.get
 
 # run phoenix in *dev* mode on port 4000
-CMD mix phoenix.server
+CMD source .env && source .env.local && mix phoenix.server
