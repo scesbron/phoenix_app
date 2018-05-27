@@ -37,9 +37,22 @@ Une bonne aide pour setup docker
 
 * https://blog.cloud66.com/deploying-your-phoenix-applications-in-production-using-docker/
 
-# TODO
+# Phoenix
+
+## Gestion des variables d'environnement
+
+* Pas satisfaisant car on doit faire un "source .env && source .env.local" à chaque fois que l'on ouvre un shell dans docker
+
+## Ecto
+
+    mix phx.gen.schema Card cards title:string message:string status:string
+
+## TODO
+
+* Revoir les tests de channel
 
 # Temps
 
 * 25/05 : 2h
 * 26/05 : 2h
+* 27/05 : 2h
