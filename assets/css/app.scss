@@ -1,4 +1,9 @@
 @import "./variables";
 @import "./components/grid";
+@import "./components/form";
 @import "./components/header";
 @import "./components/user-message";
+
+body {
+  font-family: sans-serif;
+}

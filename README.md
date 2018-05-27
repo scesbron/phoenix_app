@@ -1,8 +1,12 @@
 # PhoenixApp
 
-## Utilisation avec docker
+## Gestion des variables d'environnement
 
-Créer un fichier `.env.local` dans lequel on pourra mettre toutes les variables d'environnement spécifiques à cet environnement de développements
+Le fichier `.env` liste l'ensemble des variables d'environnement nécessaires au fonctionnement de l'application. Les valeurs dans ce fichier sont celles qui permettent de faire fonctionner l'application en développement avec docker.
+
+En développement si l'on souhaite modifier certaines variables on peut créer un fichier `.env.local` dans lequel on définit les variables pour lesquelles on souhaite avoir une nouvelle valeur
+
+## Utilisation avec docker
 
     docker-compose build
     docker-compose up -d
@@ -11,6 +15,12 @@ Créer un fichier `.env.local` dans lequel on pourra mettre toutes les variables
 
     docker-compose exec web mix ecto.create
     docker-compose exec web mix ecto.migrate
+
+## Utilisation en local
+
+Pour démarrer le serveur en local on créé un fichier `.env.local` dans lequel on rédéfinit certaines variables d'environnement si nécessaires notamment les variables de connexion à la base de données. Ensuite pour démarrer le serveur on fait
+
+    source .env && source .env.local && mix phx.server
 
 ## Storybook
 
@@ -28,8 +38,6 @@ Une bonne aide pour setup docker
 * https://blog.cloud66.com/deploying-your-phoenix-applications-in-production-using-docker/
 
 # TODO
-
-* les styles ne fonctionnent pas dans storybook
 
 # Temps
 

@@ -1,12 +1,19 @@
-user-message {
+.user-message {
   border: 1px solid $base-color;
   padding: $base-padding;
+  margin-top: $small-margin;
 }
-user-message-title {
+.user-message-local {
+  margin-right: 25%;
+}
+.user-message-server {
+  margin-left: 25%;
+}
+.user-message-title {
   font-weight: bold;
   font-size: $bigger-font-size;
   margin-bottom: $small-margin;
 }
-user-message-text {
+.user-message-text {
   text-align: justify;
 }

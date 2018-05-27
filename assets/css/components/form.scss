@@ -1,0 +1,14 @@
+.form-row {
+  display: flex;
+  margin-bottom: $small-margin;
+}
+.form-label {
+  margin-right: $small-margin;
+  padding: $tiny-padding $small-padding;
+  width: 140px;
+}
+.form-input {
+  background-color: white;
+  border: 1px solid $base-color;
+  padding: $tiny-padding $small-padding;
+}

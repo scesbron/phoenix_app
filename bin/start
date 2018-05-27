@@ -1,0 +1,2 @@
+#!/bin/bash
+source .env && source .env.local && mix phoenix.server
