@@ -20,6 +20,7 @@ defmodule PhoenixAppWeb.Router do
     get("/", PageController, :index)
     get("/login", PageController, :index)
     get("/chat", PageController, :index)
+    get("/dashboard", PageController, :index)
   end
 
   # Other scopes may use custom stacks.

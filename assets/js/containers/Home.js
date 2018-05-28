@@ -8,6 +8,9 @@ class Home extends React.Component {
         <h1>Hello React!</h1>
         <div className="row">
           <div className="col">
+            <Link to="/dashboard">Dashboard</Link>
+          </div>
+          <div className="col">
             <Link to="/chat">Chat</Link>
           </div>
           <div className="col">

@@ -50,6 +50,7 @@ Une bonne aide pour setup docker
 ## TODO
 
 * Revoir les tests de channel
+* Drag and Drop : http://react-dnd.github.io/react-dnd/
 
 # Temps
 
