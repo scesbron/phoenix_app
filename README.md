@@ -47,13 +47,25 @@ Une bonne aide pour setup docker
 
     mix phx.gen.schema Card cards title:string message:string status:string
 
+## Drag n Drop
+
+* a quoi servent les ref / innerRef et pourquoi je ne peux les mettre sur n'importe quel composant ?
+
+## Limitations
+
+* On passe comme payload la liste de toutes les cards ce qui ne fonctionne pas avec beaucoup de cards
+  * il faudrait passer les éléments qui permettent de rejouer la transition
+  * le problème c'est que le broadcast va renvoyer l'évènement sur le browser d'origine qui ne sera pas dans le bon état car la transition a déjà eu lieu sur ce browser
+
 ## TODO
 
 * Revoir les tests de channel
-* Drag and Drop : http://react-dnd.github.io/react-dnd/
+* Revoir le changement de couleur (ou d'opacité) de la card lors du drag
+* voir comment améliorer le rendu et comprendre comment imbriquer les différents composants pour cela
 
 # Temps
 
 * 25/05 : 2h
 * 26/05 : 2h
 * 27/05 : 2h
+* 28/05 : 3h
