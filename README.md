@@ -26,6 +26,8 @@ Pour démarrer le serveur en local on créé un fichier `.env.local` dans lequel
 
 ## Tutoriels utilisés
 
+Setup de phoenix et react
+
 https://medium.com/coding-artist/full-stack-react-with-phoenix-chapter-9-channels-245a24647e84
 https://medium.com/@resir014/a-phoenix-react-initial-setup-that-actually-works-c943e48f1e9e
 
@@ -36,6 +38,10 @@ Le meilleur guide pour setup webpack sur un projet phoenix
 Une bonne aide pour setup docker
 
 * https://blog.cloud66.com/deploying-your-phoenix-applications-in-production-using-docker/
+
+Utilisation de beautiful dnd
+
+* https://codesandbox.io/s/l7ro2231o7
 
 # Phoenix
 

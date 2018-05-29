@@ -4,6 +4,7 @@ import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import { Socket } from "phoenix";
 import Column from "../components/Column";
 import Card from "../components/Card";
+import { reorder, move } from "../lib/Lists";
 
 const STATUSES = [
   {
@@ -15,38 +16,6 @@ const STATUSES = [
     title: "Entretien"
   }
 ];
-
-// a little function to help us with reordering the result
-const reorder = (list, startIndex, endIndex) => {
-  const result = Array.from(list);
-  const [removed] = result.splice(startIndex, 1);
-  result.splice(endIndex, 0, removed);
-
-  return result;
-};
-
-/**
- * Moves an item from one list to another list.
- */
-const move = (source, destination, droppableSource, droppableDestination) => {
-  const sourceClone = Array.from(source);
-  const destClone = Array.from(destination);
-  const [removed] = sourceClone.splice(droppableSource.index, 1);
-
-  destClone.splice(droppableDestination.index, 0, removed);
-
-  const result = {};
-  result[droppableSource.droppableId] = sourceClone;
-  result[droppableDestination.droppableId] = destClone;
-
-  return result;
-};
-
-const getListStyle = isDraggingOver => ({
-  background: isDraggingOver ? "lightblue" : "lightgrey",
-  minHeight: "250px",
-  padding: "10px"
-});
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -102,12 +71,14 @@ class Dashboard extends React.Component {
         destination.index
       );
     } else {
-      state = move(
+      result = move(
         this.state[source.droppableId],
         this.state[destination.droppableId],
-        source,
-        destination
+        source.index,
+        destination.index
       );
+      state[source.droppableId] = result[0];
+      state[destination.droppableId] = result[1];
     }
     this.setState(state);
     this.channel.push("shout", { body: state });
@@ -125,8 +96,8 @@ class Dashboard extends React.Component {
             {STATUSES.map((item, index) => (
               <Droppable key={index} droppableId={item.status}>
                 {(provided, snapshot) => (
-                  <Column title={item.title}>
-                    <div ref={provided.innerRef} style={getListStyle(snapshot.isDraggingOver)}>
+                  <Column title={item.title} isDraggingOver={snapshot.isDraggingOver}>
+                    <div ref={provided.innerRef} style={{ height: "100%" }}>
                       {this.state[item.status].map((card, index) => (
                         <Draggable key={card.id} draggableId={card.id} index={index}>
                           {(provided, snapshot) => (
@@ -136,11 +107,9 @@ class Dashboard extends React.Component {
                               {...provided.dragHandleProps}
                             >
                               <Card
-                                id={card.id}
-                                status={card.status}
                                 title={card.title}
                                 message={card.message}
-                                style={snapshot.isDragging ? "lightgreen" : "grey"}
+                                isDragging={snapshot.isDragging}
                               />
                             </div>
                           )}

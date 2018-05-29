@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 
 class Card extends React.Component {
   render() {
-    const { title, message } = this.props;
+    const { isDragging, title, message } = this.props;
     return (
-      <div className="card">
+      <div className="card" style={{ opacity: isDragging ? "0.5" : "1" }}>
         <div className="card-header">
           <div className="card-header-title">{title}</div>
         </div>
@@ -16,8 +16,7 @@ class Card extends React.Component {
 }
 
 Card.propTypes = {
-  id: PropTypes.number.isRequired,
-  status: PropTypes.string.isRequired,
+  isDragging: PropTypes.bool,
   title: PropTypes.string.isRequired,
   message: PropTypes.string.isRequired
 };

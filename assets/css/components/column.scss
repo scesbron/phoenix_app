@@ -17,6 +17,10 @@
   color: #2b3b61;
   text-transform: uppercase;
 }
-.column-content .card-thumbnail-container:nth-child(1) {
-  margin-top: 10px;
+.column-content {
+  height: 100%;
+  padding: 10px;
+}
+.column-content-over {
+  background-color: lightblue;
 }

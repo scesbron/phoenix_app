@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly on default state 1`] = `
+<div
+  className="column"
+>
+  <div
+    className="column-header"
+  >
+    <div
+      className="column-header-title"
+    >
+      Title
+    </div>
+  </div>
+  <div
+    className="column-content "
+  >
+    <div>
+      Content
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders correctly when dragging is over 1`] = `
+<div
+  className="column"
+>
+  <div
+    className="column-header"
+  >
+    <div
+      className="column-header-title"
+    >
+      Title
+    </div>
+  </div>
+  <div
+    className="column-content column-content-over"
+  >
+    <div>
+      Content
+    </div>
+  </div>
+</div>
+`;

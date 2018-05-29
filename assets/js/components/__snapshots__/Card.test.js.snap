@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly when dragging 1`] = `
+<div
+  className="card"
+  style={
+    Object {
+      "opacity": "0.5",
+    }
+  }
+>
+  <div
+    className="card-header"
+  >
+    <div
+      className="card-header-title"
+    >
+      Title
+    </div>
+  </div>
+  <div
+    className="card-content"
+  >
+    Message
+  </div>
+</div>
+`;
+
+exports[`renders correctly when not dragging 1`] = `
+<div
+  className="card"
+  style={
+    Object {
+      "opacity": "1",
+    }
+  }
+>
+  <div
+    className="card-header"
+  >
+    <div
+      className="card-header-title"
+    >
+      Title
+    </div>
+  </div>
+  <div
+    className="card-content"
+  >
+    Message
+  </div>
+</div>
+`;

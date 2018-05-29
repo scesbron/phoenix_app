@@ -13,8 +13,10 @@ storiesOf("UserMessage", module)
     <UserMessage username="Sébastien" message="Bonjour !" fromServer={true} />
   ));
 
-storiesOf("Column", module).add("only title", () => <Column title="Column title" />);
+storiesOf("Column", module)
+  .add("default state", () => <Column title="Column title" />)
+  .add("dragging over", () => <Column title="Column title" isDraggingOver={true} />);
 
-storiesOf("Card", module).add("default state", () => (
-  <Card title="Card title" message="Card message" />
-));
+storiesOf("Card", module)
+  .add("default state", () => <Card title="Card title" message="Card message" isDragging={false} />)
+  .add("dragging", () => <Card title="Card title" message="Card message" isDragging={true} />);
