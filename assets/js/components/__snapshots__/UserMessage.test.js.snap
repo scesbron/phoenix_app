@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly local message 1`] = `
+<div
+  className="user-message user-message-local"
+>
+  <div
+    className="user-message-title"
+  >
+    Title
+  </div>
+  <div
+    className="user-message-text"
+  >
+    Bonjour
+  </div>
+</div>
+`;
+
+exports[`renders correctly server message 1`] = `
+<div
+  className="user-message user-message-server"
+>
+  <div
+    className="user-message-title"
+  >
+    Title
+  </div>
+  <div
+    className="user-message-text"
+  >
+    Bonjour
+  </div>
+</div>
+`;
