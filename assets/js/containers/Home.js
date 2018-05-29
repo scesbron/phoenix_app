@@ -13,9 +13,6 @@ class Home extends React.Component {
           <div>
             <Link to="/chat">Chat</Link>
           </div>
-          <div>
-            <Link to="/login">Login</Link>
-          </div>
         </div>
       </div>
     );
