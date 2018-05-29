@@ -16,11 +16,8 @@ defmodule PhoenixApp.Card do
     |> cast(attrs, [:title, :message, :status])
     |> validate_required([:title, :message, :status])
     |> validate_inclusion(:status, [
-      "backlog",
-      "in_progress",
-      "to_test",
-      "validated",
-      "in_production"
+      "to_meet",
+      "meeting"
     ])
   end
 end

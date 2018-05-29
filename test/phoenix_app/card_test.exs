@@ -3,7 +3,7 @@ defmodule PhoenixApp.CardTest do
 
   alias PhoenixApp.Card
 
-  @valid_attrs %{title: "Titre", message: "Message", status: "backlog"}
+  @valid_attrs %{title: "Titre", message: "Message", status: "to_meet"}
 
   test "changeset with valid attributes" do
     changeset = Card.changeset(%Card{}, @valid_attrs)

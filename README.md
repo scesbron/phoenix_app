@@ -37,6 +37,18 @@ En plus de la partie tableau avec drag and drop il y a un composant `Chat` qui m
 
 # PhoenixApp
 
+## Communication avec le board
+
+La communication avec le front pour avoir une mise à jour en temps réel des navigateurs se fait via l'utilisation des channels
+
+## Objets persitents
+
+Pour ajouter du code et des tests dans la partie backend j'ai créé un objet métier `Card`. Il n'est pas utilisé dans le front.
+
+## Tests
+
+On utilise le framework de test par défaut fourni par phoenix. Il y a des tests sur les channels et sur le schema `Card`
+
 ## Gestion des variables d'environnement
 
 Le fichier `.env` liste l'ensemble des variables d'environnement nécessaires au fonctionnement de l'application. Les valeurs dans ce fichier sont celles qui permettent de faire fonctionner l'application en développement avec docker.
@@ -47,6 +59,12 @@ En développement si l'on souhaite modifier certaines variables on peut créer u
 
     docker-compose build
     docker-compose up -d
+
+Si l'on souhaite exécuter des commandes `mix` dans le container on fait un
+
+    docker-compose exec web bash
+
+Le dockerfile ajoute dans le fichier `.bashrc` du container le sourcing des fichiers d'env ce qui fait que lorsque l'on se connecte au container les variables d'environnement sont disponibles.
 
 ## Création et migration de la base
 
@@ -59,7 +77,14 @@ Pour démarrer le serveur en local on créé un fichier `.env.local` dans lequel
 
     source .env && source .env.local && mix phx.server
 
-## Tutoriels utilisés
+# Améliorations possibles
+
+* On passe comme payload la liste de toutes les cards ce qui ne fonctionne pas avec beaucoup de cards
+  * il faudrait passer les éléments qui permettent de rejouer la transition
+  * le problème c'est que le broadcast va renvoyer l'évènement sur le browser d'origine qui ne sera pas dans le bon état car la transition a déjà eu lieu sur ce browser
+* On pourrait utiliser l'object `Card` du backend pour sauvegarder les cards lorsqu'on les déplace
+
+# Tutoriels utilisés
 
 Setup de phoenix et react
 
@@ -77,35 +102,3 @@ Une bonne aide pour setup docker
 Utilisation de beautiful dnd
 
 * https://codesandbox.io/s/l7ro2231o7
-
-# Phoenix
-
-## Gestion des variables d'environnement
-
-* Pas satisfaisant car on doit faire un "source .env && source .env.local" à chaque fois que l'on ouvre un shell dans docker
-
-## Ecto
-
-    mix phx.gen.schema Card cards title:string message:string status:string
-
-## Drag n Drop
-
-* a quoi servent les ref / innerRef et pourquoi je ne peux les mettre sur n'importe quel composant ?
-
-## Limitations
-
-* On passe comme payload la liste de toutes les cards ce qui ne fonctionne pas avec beaucoup de cards
-  * il faudrait passer les éléments qui permettent de rejouer la transition
-  * le problème c'est que le broadcast va renvoyer l'évènement sur le browser d'origine qui ne sera pas dans le bon état car la transition a déjà eu lieu sur ce browser
-
-## TODO
-
-* voir comment améliorer le rendu et comprendre comment imbriquer les différents composants pour cela
-
-# Temps
-
-* 25/05 : 2h
-* 26/05 : 2h
-* 27/05 : 2h
-* 28/05 : 3h
-* 29/05 : 1h30
