@@ -12,7 +12,7 @@ defmodule PhoenixAppWeb.RoomChannelTest do
   end
 
   test "new_msg broadcasts to room:lobby", %{socket: socket} do
-    push(socket, "new_msg", %{"hello" => "all"})
-    assert_broadcast("new_msg", %{"hello" => "all"})
+    push(socket, "new_msg", %{body: "all"})
+    assert_broadcast("new_msg", %{body: "all"})
   end
 end
