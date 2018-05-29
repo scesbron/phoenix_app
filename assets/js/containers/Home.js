@@ -7,13 +7,13 @@ class Home extends React.Component {
       <div className="main-wrapper">
         <h1>Hello React!</h1>
         <div className="row">
-          <div className="col">
+          <div>
             <Link to="/dashboard">Dashboard</Link>
           </div>
-          <div className="col">
+          <div>
             <Link to="/chat">Chat</Link>
           </div>
-          <div className="col">
+          <div>
             <Link to="/login">Login</Link>
           </div>
         </div>

@@ -65,8 +65,6 @@ Utilisation de beautiful dnd
 
 ## TODO
 
-* Revoir les tests de channel
-* Revoir le changement de couleur (ou d'opacité) de la card lors du drag
 * voir comment améliorer le rendu et comprendre comment imbriquer les différents composants pour cela
 
 # Temps
@@ -75,3 +73,4 @@ Utilisation de beautiful dnd
 * 26/05 : 2h
 * 27/05 : 2h
 * 28/05 : 3h
+* 29/05 : 1h30
