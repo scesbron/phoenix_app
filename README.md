@@ -1,3 +1,40 @@
+# Présentation
+
+Cette application utilise un backend en phoenix/elixir et un frontend en React pour mettre en oeuvre un tableau sur lequel on déplace des cartes entre des colonnes.
+
+# React
+
+## Styles
+
+Les styles sont codés en scss avec l'utilisation de variables pour les éléments communs.
+
+## Storybook
+
+Pour présenter les composants principaux dans leurs différents état on utilise storybook.
+
+Pour démarrer storybook on fait un `yarn storybook` à partir du répertoire `assets` et ensuite le storybook est accessible à l'url http://localhost:9001
+
+## Tests
+
+Les tests sont réalisés avec le framework Jest. Il y a deux types de tests
+
+* des tests de snapshot pour vérifier que les principaux composants ont un rendu qui reste stable
+* des tests unitaires sur les méthodes de tri de liste
+
+## Gestion du drag and drop
+
+Le drag and drop est géré via l'utilisation de la librairie react-beautiful-dnd.
+
+Le composant `Dashboard` contient le code relatif au drag and drop. Il définit que les `Card` sont les éléments qui peuvent être déplacés (Draggable) et les `Column` (plus exactement leur contenu) sont les éléments où les cartes peuvent être déplacées (Droppable).
+
+## Communication avec le serveur
+
+La communication avec le serveur se fait via une librairie fournie par phoenix qui permet d'utiliser une classe `Socket` qui va permettre de dialoguer avec les channels côté backend.
+
+## Chat
+
+En plus de la partie tableau avec drag and drop il y a un composant `Chat` qui m'a servi à voir comment on met en place la communication avec les channels côté serveur.
+
 # PhoenixApp
 
 ## Gestion des variables d'environnement
@@ -21,8 +58,6 @@ En développement si l'on souhaite modifier certaines variables on peut créer u
 Pour démarrer le serveur en local on créé un fichier `.env.local` dans lequel on rédéfinit certaines variables d'environnement si nécessaires notamment les variables de connexion à la base de données. Ensuite pour démarrer le serveur on fait
 
     source .env && source .env.local && mix phx.server
-
-## Storybook
 
 ## Tutoriels utilisés
 
